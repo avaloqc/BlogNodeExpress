@@ -27,6 +27,13 @@ app.get('/', (req, res) => {
     res.redirect('/blogs');
 });  
 
+app.delete('/blogs/:id', (req, res) => {
+    Blog.findByIdAndDelete(req.params.id)
+        .then(() => {
+            res.json({ redirect: '/blogs'})
+        })
+})
+
 app.get('/blogs', (req, res) => {
     Blog.find()
     .then((result)=>{
@@ -59,12 +66,7 @@ app.get('/about', (req, res) => {
 //         .catch(err=>(console.log(err)))
 // })
 
-app.delete('/blogs/:id', (req, res) => {
-    Blog.findByIdAndDelete(req.params.id)
-        .then(() => {
-            res.json({ redirect: '/blogs'})
-        })
-})
+
 
 app.get('/criar', (req, res) => {
     res.render('create', {title: "Criar Blog"})
