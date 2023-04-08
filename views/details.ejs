@@ -6,7 +6,7 @@
     <div>
       <p><%= blog.body %></p>
     </div>
-    <a class="delete" data-doc="<%= blog._id %>">delete</a>
+    <a class="delete" data-doc="<%= blog._id %>"><img src="/trashcan.svg" alt="delete"></a>
   </div>
   <%- include ('partials/footer.ejs') %>
   <script>
@@ -18,7 +18,7 @@
         })
         .then(response => response.json())
         .then(data => window.location.href = data.redirect)
-        .catch(err => console.log('erro :>> ', erro))
+        .catch(err => console.log('erro :>> ', err))
     })
   </script>
 </body>
