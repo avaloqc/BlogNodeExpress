@@ -2,14 +2,15 @@
 <%- include ('./partials/head.ejs') %>
 <body>
   <%- include ('./partials/nav.ejs') %>
-  <div class="create-blog-content">
+  <div class="create-blog content">
     <form action="/blogs" method="POST">
-      <label for="title"></label>
+      <label for="title">Títolo do blog</label>
       <input type="text" id="title" name="title" required>
       <label for="snippet">Blog snippet:</label>
       <input type="text" id="snippet" name="snippet" required>
       <label for="body">Corpo do blog</label>
-      <textarea id="body" name="body" required cols="30" rows="10"></textarea>
+      <textarea id="body" name="body" required></textarea>
+      
       <button>Enviar</button>
     </form>
   </div>

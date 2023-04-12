@@ -6,7 +6,7 @@ FIX: URL= mongodb://127.0.0.1:27017/collection'. SOURCE: mongoDB forums
 # .css error #
 Files getting send in the url/routing, breaking ccs or sending server errors. 
 
-FIX: To prevent this put /id: request at the top of the requests or refactor the static middleware to read from (__dirname).
+FIX: To prevent this try to refactor the static middleware to read from (__dirname).
 
 Include following line in your app.js file.
 `app.use(express.static( __dirname + "/public"));`
@@ -24,6 +24,6 @@ In this example *styles.css* file is saved in *public/stylesheets/style.css*, Pl
 CastError: Cast to ObjectId failed for value "criar" (type string) at path "_id" for model "Blog".
 In Express routes are read top to bottom putting /:id routes at the top will trigger those first using other url/path as parameters.
 
-FIX: put /:id at last
+FIX: put /:id routes at last
 
 
