@@ -13,11 +13,6 @@
       color: #222;
     }
 
-    .site-title{
-      color: #222;
-      font-weight: bold;
-    }
-
     /* nav & footer styles */
     nav{
       display: flex;
